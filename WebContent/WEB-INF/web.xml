@@ -10,6 +10,18 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <filter>
+    <filter-name>SecurityServlet</filter-name>
+    <filter-class>com.a.web.servlet.SecurityServlet</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SecurityServlet</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>SecurityServlet</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <filter>
     <filter-name>s2</filter-name>
     <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
   </filter>
@@ -18,12 +30,10 @@
     <url-pattern>/*</url-pattern>
   </filter-mapping>
   <context-param>
-  	<param-name>contextConfigLocation</param-name>
-  	<param-value>classpath:applicationContext.xml</param-value><!--,classpath:dao.xml  -->
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
   <listener>
-  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
-  
-  
 </web-app>

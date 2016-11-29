@@ -45,7 +45,6 @@ public class LoginAction extends ActionSupport implements SessionAware,ModelDriv
 
 	public String login(){
 		User u=userBiz.login(user);
-		System.out.println(user.getIsAdmin());
 		session.put("user", u);
 		if(u==null){
 			return LOGIN;
